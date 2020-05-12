@@ -5,7 +5,7 @@ import './App.css';
 import { Grid } from '@material-ui/core';
 
 
-const API_KEY = "65525897";
+const API_KEY = "9e6d6d2f";
 
 const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=9e6d6d2f`;
 
