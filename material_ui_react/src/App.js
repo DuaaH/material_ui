@@ -61,7 +61,7 @@ const App = () => {
       type: "SEARCH_MOVIES_REQUEST"
     });
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&y=2020&apikey=${API_KEY}&page=1`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}&page=1`)
       .then(response => response.json())
       .then(jsonResponse => {
         console.log(jsonResponse);
