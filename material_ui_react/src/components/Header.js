@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -79,7 +79,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header() {
+export default function Header(props) {
+  console.log("props", props);
+
+  const [searchValue, setSearchValue] = useState("");
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -103,6 +106,18 @@ export default function Header() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleSearchInputChanges = (e) => {
+    e.preventDefault();
+    setSearchValue(e.target.value);
+    props.search(searchValue);
+    // resetInputField();
+  }
+
+  // const resetInputField = () => {
+  //   setSearchValue("");
+  // }
+
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -182,6 +197,8 @@ export default function Header() {
             </div>
             <InputBase
               placeholder="Search…"
+              value={searchValue}
+              onChange={handleSearchInputChanges}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
