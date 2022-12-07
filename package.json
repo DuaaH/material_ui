@@ -20,6 +20,6 @@
   "homepage": "https://github.com/DuaaH/material_ui#readme",
   "dependencies": {
     "cookie-parser": "^1.4.4",
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   }
 }
